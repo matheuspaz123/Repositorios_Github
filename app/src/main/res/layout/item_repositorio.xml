@@ -14,18 +14,22 @@
             android:id="@+id/recycler_tv_usuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
             android:hint="@string/nome_de_usuario"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:drawableLeftCompat="@drawable/ic_user" />
 
         <TextView
             android:id="@+id/recycler_tv_repositorio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:drawablePadding="5dp"
             android:hint="@string/reposit_rio"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recycler_tv_usuario" />
+            app:layout_constraintTop_toBottomOf="@+id/recycler_tv_usuario"
+            app:drawableLeftCompat="@drawable/ic_repositorio" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
