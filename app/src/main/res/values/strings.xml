@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Repositorios Github</string>
+    <string name="nome_de_usuario">Nome de usuario:</string>
+    <string name="reposit_rio">Repositòrio: </string>
 </resources>
