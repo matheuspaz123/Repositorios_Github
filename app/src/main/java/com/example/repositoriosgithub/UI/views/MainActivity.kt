@@ -1,4 +1,4 @@
-package com.example.repositoriosgithub.views
+package com.example.repositoriosgithub.UI.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

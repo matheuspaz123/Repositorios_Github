@@ -10,6 +10,5 @@ package com.example.repositoriosgithub.model
 *o owner tem o login que é o nome do usuario e o url do avatar
 */
 
-data class GitModel (val item: Items)
-data class Items(val name: String, val owner: Owner, val description: String)
-data class Owner(val login: String,val avatar_ur: String )
+data class ItemsModel(val name:String,val owner:Owner,val description:String)
+data class Owner(val login:String,val avatar_url:String)

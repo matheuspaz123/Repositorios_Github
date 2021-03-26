@@ -1,17 +1,17 @@
-package com.example.repositoriosgithub.adapter
+package com.example.repositoriosgithub.UI.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.repositoriosgithub.R
-import com.example.repositoriosgithub.model.Items
+import com.example.repositoriosgithub.model.ItemsModel
 import kotlinx.android.synthetic.main.item_repositorio.view.*
 
 //Classe com o adapter e o viewholder do recyclerview
 
 class GitAdapter() : RecyclerView.Adapter<GitAdapter.GitViewHolder>() {
-    private var listaGit = ArrayList<Items>()
+    private var listaGit = ArrayList<ItemsModel>()
 
     class GitViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         //variaveis para fazer o binding
@@ -20,7 +20,7 @@ class GitAdapter() : RecyclerView.Adapter<GitAdapter.GitViewHolder>() {
 
 
         //função para o bind
-        fun bind(data: Items){
+        fun bind(data: ItemsModel){
             userNameTv.text = data.owner.login
             repositorio.text = data.name
         }
@@ -46,7 +46,7 @@ class GitAdapter() : RecyclerView.Adapter<GitAdapter.GitViewHolder>() {
     }
 
     //passando a lista para a variavel glogal
-    fun setData(lista: ArrayList<Items>){
+    fun setData(lista: List<ItemsModel>){
         this.listaGit.addAll(lista)
     }
 
