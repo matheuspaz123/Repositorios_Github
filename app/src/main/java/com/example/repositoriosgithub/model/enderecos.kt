@@ -1,4 +1,4 @@
-package com.example.repositoriosgithub
+package com.example.repositoriosgithub.model
 
 
 //classe para as url's da api do github
