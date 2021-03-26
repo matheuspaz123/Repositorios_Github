@@ -1,4 +1,4 @@
-package com.example.repositoriosgithub.UI.views
+package com.example.repositoriosgithub.UI.views.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -31,6 +31,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
+
 
 
 

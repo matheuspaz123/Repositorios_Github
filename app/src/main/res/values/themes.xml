@@ -3,7 +3,7 @@
     <style name="Theme.SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#303030</item>
-        <item name="colorPrimaryVariant">#737373</item>
+        <item name="colorPrimaryVariant">@color/cinza</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
