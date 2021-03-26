@@ -2,4 +2,6 @@
     <string name="app_name">Repositorios Github</string>
     <string name="nome_de_usuario">Nome de usuario:</string>
     <string name="reposit_rio">Repositòrio: </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
