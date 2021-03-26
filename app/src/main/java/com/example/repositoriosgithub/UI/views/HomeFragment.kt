@@ -13,7 +13,6 @@ import com.example.repositoriosgithub.UI.adapter.GitAdapter
 import com.example.repositoriosgithub.R
 import com.example.repositoriosgithub.UI.viewmodel.GitViewModel
 import com.example.repositoriosgithub.model.ItemsModel
-import com.example.repositoriosgithub.model.Owner
 import kotlinx.android.synthetic.main.fragment_home.view.*
 
 
@@ -37,11 +36,20 @@ class HomeFragment : Fragment() {
 
         gerarRecycler()
 
-        val homeRecycler = view.home_recycler
-        homeRecycler.adapter = mAdapter
-        homeRecycler.layoutManager = LinearLayoutManager(context)
+        criarRecyclerView(view)
+
 
         return view
+    }
+
+    private fun criarRecyclerView(view: View){
+        val homeRecycler = view.home_recycler
+
+        homeRecycler.apply {
+            adapter = mAdapter
+            layoutManager = LinearLayoutManager(context)
+        }
+
     }
 
 

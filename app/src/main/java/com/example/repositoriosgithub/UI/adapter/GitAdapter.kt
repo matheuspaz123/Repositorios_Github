@@ -23,6 +23,18 @@ class GitAdapter() : RecyclerView.Adapter<GitAdapter.GitViewHolder>() {
         fun bind(data: ItemsModel){
             userNameTv.text = data.owner.login
             repositorio.text = data.name
+
+            setListeners(data)
+        }
+
+        //configurando o listener de cada view para abris os detalhas do repositorio
+        private fun setListeners(data: ItemsModel){
+            userNameTv.setOnClickListener {
+
+            }
+            repositorio.setOnClickListener {
+
+            }
         }
 
     }
@@ -42,7 +54,7 @@ class GitAdapter() : RecyclerView.Adapter<GitAdapter.GitViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: GitViewHolder, position: Int) {
-        holder.bind(listaGit[position])
+        holder.bind(listaGit[position])//fazendo o bind dos itens nas views
     }
 
     //passando a lista para a variavel glogal

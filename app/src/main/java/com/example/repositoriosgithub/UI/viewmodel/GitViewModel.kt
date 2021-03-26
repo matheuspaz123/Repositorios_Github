@@ -24,6 +24,7 @@ class GitViewModel(application: Application): AndroidViewModel(application) {
 
     //faz a call para a api rest
     fun getRepositorio(){
+
         val retrofitInstancia = RetrofitInstancia.getRetrofitIntance().create(ApiInterface::class.java)
         val call = retrofitInstancia.apiGetRepositorios()
         call.enqueue(object : Callback<List<ItemsModel>>{
