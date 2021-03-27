@@ -40,6 +40,7 @@ class GitAdapter() : RecyclerView.Adapter<GitAdapter.GitViewHolder>(), Filterabl
             //enviando o repositorio para o fragmento detalhes
             val detalhesFragArgs = HomeFragmentDirections.actionHomeFragmentToDetalhesFragment(data)
             itemView.setOnClickListener {
+
                 itemView.findNavController().navigate(detalhesFragArgs)
             }
 
