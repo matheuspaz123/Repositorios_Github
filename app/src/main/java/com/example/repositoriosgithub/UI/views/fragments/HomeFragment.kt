@@ -48,13 +48,15 @@ class HomeFragment : Fragment() {
 
 
     //iniciar listeners
-    private fun iniciandoListeners(view: View){
-        view.home_barra_busca.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
-            override fun onQueryTextSubmit(query: String?): Boolean {
+    private fun iniciandoListeners(view: View) {
 
+        //listener para o item de busca
+        view.home_barra_busca.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
             }
 
+            // ao auterar o texto do item de busca ele manda para o adapter filtrar e gerar uma nova lista
             override fun onQueryTextChange(newText: String?): Boolean {
                 mAdapter.filter.filter(newText)
                 return false
@@ -63,8 +65,8 @@ class HomeFragment : Fragment() {
         })
     }
 
-
-    private fun criarRecyclerView(view: View){
+    //cria o recyclerview
+    private fun criarRecyclerView(view: View) {
         val homeRecycler = view.home_recycler
 
         homeRecycler.apply {
@@ -75,24 +77,22 @@ class HomeFragment : Fragment() {
     }
 
 
-
-    // passa a lista para o adapter
+    // pega e passa a lista obtida para o adapter
     private fun gerarRecycler() {
 
         mGitViewModel = ViewModelProvider(this).get(GitViewModel::class.java)
         mGitViewModel.getMutableList().observe(viewLifecycleOwner, Observer<List<ItemsModel>> {
-            if (it != null){
+
+            if (it != null) { //se o retrofit retornar a lista, ele manda para o adapter
+
                 mAdapter.setData(it as ArrayList<ItemsModel>)
                 mAdapter.notifyDataSetChanged()
-            }else{
-                Toast.makeText(context, "Erro ao comunicar com a Api", Toast.LENGTH_SHORT).show()
+
+            } else {  //se o retrofit não retornar nada apresenta a mensagem de erro
+                Toast.makeText(context, "Erro ao se comunicar com o servidor", Toast.LENGTH_SHORT).show()
             }
         })
         mGitViewModel.getRepositorio()
-
-
-        //mAdapter.setData()
-        //mAdapter.notifyDataSetChanged()
 
     }
 

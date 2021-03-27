@@ -5,7 +5,7 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 /*
-*função que recebe a lista de repositorios
+*função que recebe a lista de todos os repositorios publicos
 */
 
 interface ApiInterface {

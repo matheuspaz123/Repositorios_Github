@@ -13,7 +13,7 @@ import kotlinx.android.parcel.Parcelize
 *o owner tem o login que é o nome do usuario e o url do avatar
 */
 
-@Parcelize //permitir passar items atravez de fragments
+@Parcelize //permitir passar items atravez de fragmentArgs
 data class ItemsModel(val name:String,val owner:Owner,val description:String): Parcelable
 @Parcelize
 data class Owner(val login:String,val avatar_url:String): Parcelable

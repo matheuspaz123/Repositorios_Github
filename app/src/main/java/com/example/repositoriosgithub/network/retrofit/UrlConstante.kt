@@ -6,7 +6,7 @@ package com.example.repositoriosgithub.network.retrofit
 class UrlConstante {
 
     companion object{
-        const val urlBase: String = "https://api.github.com/"
+        const val URLBASE: String = "https://api.github.com/"
     }
 
 

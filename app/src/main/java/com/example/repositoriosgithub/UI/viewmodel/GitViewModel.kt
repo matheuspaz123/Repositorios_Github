@@ -10,7 +10,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class GitViewModel(application: Application): AndroidViewModel(application) {
+class GitViewModel(application: Application) : AndroidViewModel(application) {
     lateinit var mutableListLiveData: MutableLiveData<List<ItemsModel>>
 
     init {
@@ -18,20 +18,27 @@ class GitViewModel(application: Application): AndroidViewModel(application) {
     }
 
     //retorna a variavel para observar
-    fun getMutableList(): MutableLiveData<List<ItemsModel>>{
+    fun getMutableList(): MutableLiveData<List<ItemsModel>> {
         return mutableListLiveData
     }
 
     //faz a call para a api rest
-    fun getRepositorio(){
+    fun getRepositorio() {
 
-        val retrofitInstancia = RetrofitInstancia.getRetrofitIntance().create(ApiInterface::class.java)
-        val call = retrofitInstancia.apiGetRepositorios()
-        call.enqueue(object : Callback<List<ItemsModel>>{
+        val retrofitInstancia =
+            RetrofitInstancia.getRetrofitIntance().create(ApiInterface::class.java) //instancia o retrofit
+
+        val call = retrofitInstancia.apiGetRepositorios() // recebe o valor que a api manda
+
+        call.enqueue(object : Callback<List<ItemsModel>> {
             override fun onFailure(call: Call<List<ItemsModel>>, t: Throwable) {
             }
 
-            override fun onResponse(call: Call<List<ItemsModel>>, response: Response<List<ItemsModel>>) {
+            //envia os dados da resposta para o mutablelist
+            override fun onResponse(
+                call: Call<List<ItemsModel>>,
+                response: Response<List<ItemsModel>>
+            ) {
                 mutableListLiveData.postValue(response.body())
 
             }

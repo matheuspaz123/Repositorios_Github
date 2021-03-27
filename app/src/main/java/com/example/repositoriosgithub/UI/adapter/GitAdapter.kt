@@ -68,8 +68,8 @@ class GitAdapter() : RecyclerView.Adapter<GitAdapter.GitViewHolder>(), Filterabl
     //passando a lista para a variavel glogal
     fun setData(lista: ArrayList<ItemsModel>) {
         this.listaGit = lista
-        listaGitBackUp = if (lista.size > listaGitBackUp.size) lista else listaGitBackUp
-
+        listaGitBackUp =
+            if (lista.size > listaGitBackUp.size) lista else listaGitBackUp //garante que a o backUp da lista fique original
         notifyDataSetChanged()
     }
 
@@ -79,6 +79,8 @@ class GitAdapter() : RecyclerView.Adapter<GitAdapter.GitViewHolder>(), Filterabl
             override fun performFiltering(constraint: CharSequence?): FilterResults {
                 val charSearch = constraint.toString() //recebe o carecter do menu de pesquisa
                 val resultList = ArrayList<ItemsModel>() //recebe os itens se conterem os caracteres
+
+                //faz a filtragem dos nomes dos repositorios que contem os caracteres digitados
                 if (charSearch.isNotEmpty()) {
                     for (row in listaGitBackUp) {
                         if (row.name.toLowerCase(Locale.ROOT)
