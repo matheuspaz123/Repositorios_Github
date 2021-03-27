@@ -18,6 +18,7 @@ import kotlin.collections.ArrayList
 
 class GitAdapter() : RecyclerView.Adapter<GitAdapter.GitViewHolder>(), Filterable {
     private var listaGit = ArrayList<ItemsModel>()
+    private var listaGitBackUp = ArrayList<ItemsModel>()
 
     class GitViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         //variaveis para fazer o binding
@@ -65,33 +66,40 @@ class GitAdapter() : RecyclerView.Adapter<GitAdapter.GitViewHolder>(), Filterabl
     }
 
     //passando a lista para a variavel glogal
-    fun setData(lista: List<ItemsModel>) {
-        this.listaGit.addAll(lista)
+    fun setData(lista: ArrayList<ItemsModel>) {
+        this.listaGit = lista
+        listaGitBackUp = if (lista.size > listaGitBackUp.size) lista else listaGitBackUp
+
+        notifyDataSetChanged()
     }
 
-    override fun getFilter(): Filter {
-        return object: Filter(){
-            override fun performFiltering(constraint: CharSequence?): FilterResults {
-                val charSearch = constraint.toString()
-                if (charSearch.isEmpty()) {
 
-                } else {
-                    val resultList = ArrayList<ItemsModel>()
-                    for (row in listaGit ) {
-                        if (row.name.toLowerCase(Locale.ROOT).contains(charSearch.toLowerCase(Locale.ROOT))) {
+    override fun getFilter(): Filter {
+        return object : Filter() {
+            override fun performFiltering(constraint: CharSequence?): FilterResults {
+                val charSearch = constraint.toString() //recebe o carecter do menu de pesquisa
+                val resultList = ArrayList<ItemsModel>() //recebe os itens se conterem os caracteres
+                if (charSearch.isNotEmpty()) {
+                    for (row in listaGitBackUp) {
+                        if (row.name.toLowerCase(Locale.ROOT)
+                                .contains(charSearch.toLowerCase(Locale.ROOT))
+                        ) {
                             resultList.add(row)
                         }
                     }
-                    listaGit = resultList
                 }
+
+
                 val filterResults = FilterResults()
-                filterResults.values = listaGit
+                filterResults.values = resultList
                 return filterResults
             }
 
+            //manda o vetor novo para o vetor global do adapter
             @Suppress("UNCHECKED_CAST")
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
-                TODO("Not yet implemented")
+                val lista = results?.values as ArrayList<ItemsModel>
+                setData(lista)
             }
 
         }

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -21,6 +22,7 @@ class HomeFragment : Fragment() {
     private var mAdapter = GitAdapter()
     private lateinit var mGitViewModel: GitViewModel
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -34,6 +36,7 @@ class HomeFragment : Fragment() {
 
 
 
+        iniciandoListeners(view)
 
         gerarRecycler()
 
@@ -42,6 +45,24 @@ class HomeFragment : Fragment() {
 
         return view
     }
+
+
+    //iniciar listeners
+    private fun iniciandoListeners(view: View){
+        view.home_barra_busca.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                mAdapter.filter.filter(newText)
+                return false
+            }
+
+        })
+    }
+
 
     private fun criarRecyclerView(view: View){
         val homeRecycler = view.home_recycler
@@ -56,12 +77,12 @@ class HomeFragment : Fragment() {
 
 
     // passa a lista para o adapter
-    fun gerarRecycler() {
+    private fun gerarRecycler() {
 
         mGitViewModel = ViewModelProvider(this).get(GitViewModel::class.java)
         mGitViewModel.getMutableList().observe(viewLifecycleOwner, Observer<List<ItemsModel>> {
             if (it != null){
-                mAdapter.setData(it)
+                mAdapter.setData(it as ArrayList<ItemsModel>)
                 mAdapter.notifyDataSetChanged()
             }else{
                 Toast.makeText(context, "Erro ao comunicar com a Api", Toast.LENGTH_SHORT).show()
@@ -74,6 +95,5 @@ class HomeFragment : Fragment() {
         //mAdapter.notifyDataSetChanged()
 
     }
-
 
 }
