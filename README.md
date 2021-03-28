@@ -14,7 +14,7 @@ Projeto do aplicativo comcluido
 
 
 
-## Pré-Requisitos
+## Pré-Requisitos e instalação
 
 #### 1. No android
 
@@ -26,6 +26,18 @@ Para uso na plataforma android é necessario que o Sistema Operacional seja Loli
 
 Com o Android studio é recomendado a versão mais recente ou 4.0 superior. Para clonar o projeto na IDE do android studio basta seguir os passos abaixo:
 
+
+
+Na tela de bem vindo do android studio clique em Get from version control
+
+![1](https://user-images.githubusercontent.com/65925406/112752907-aed05300-8fab-11eb-85fe-3476bd389fe5.png)
+
+
+
+Em seguida cole o link: https://github.com/matheuspaz123/Repositorios_Github.git em URL
+E clique em clone
+
+![2](https://user-images.githubusercontent.com/65925406/112753013-4cc41d80-8fac-11eb-81ba-4d2815004f25.png)
 
 
 
