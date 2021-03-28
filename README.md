@@ -22,7 +22,7 @@ Projeto do aplicativo concluido
    * [Aplicativo Repositorios do Github](#aplicativo-repositorios-do-github)
    * [Descrição](#descricao)
    * [Status do projeto](#status-do-projeto)
-   * [Tópicos](#pre-eequisitos)
+   * [Tópicos](#topicos)
    * [Pré-Requisitos e instalação](#pre-requisitos-e-instalacao)
       * [No android](#no-android)
       * [Com o Android Studio](#com-o-android-studio)
