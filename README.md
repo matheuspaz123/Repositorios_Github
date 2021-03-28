@@ -4,7 +4,7 @@
 
 ## Descrição
 
-Um aplicativo para fazer buscas dos repositorios publicos que estão na plataforma do github e exibe detalhes sobre o mesmo em uma lista. A lista contem o nome do repositorio como tambem o login(nome de usuario) do repositorio. Cada item da lista ao ser selecionado exibe as informações adicionais dos repositorios, táis como avatar do no, nome do repositorio, nome do dono do repositorio e a descrição do mesmo.
+Um aplicativo para fazer buscas dos repositorios publicos que estão na plataforma do github e exibir detalhes sobre o mesmo em uma lista. A lista contem o nome do repositorio como tambem o login(nome de usuario) do repositorio. Cada item da lista ao ser selecionado exibe as informações adicionais dos repositorios, táis como avatar do no, nome do repositorio, nome do dono do repositorio e a descrição do mesmo.
 
 
 
