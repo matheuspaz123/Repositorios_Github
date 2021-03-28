@@ -10,7 +10,7 @@ O aplicativo faz buscas dos repositorios publicos que estão na plataforma do gi
 
 ## Status do projeto
 
-Projeto do aplicativo comcluido 
+Projeto do aplicativo concluido 
 
 
 
