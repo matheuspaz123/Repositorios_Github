@@ -20,16 +20,16 @@ Projeto do aplicativo comcluido
 <!--ts-->
    
    * [Aplicativo Repositorios do Github](#aplicativo-repositorios-do-github)
-   * [Descrição](##descricao)
-   * [Status do projeto](##status-do-projeto)
+   * [Descrição](#descricao)
+   * [Status do projeto](#status-do-projeto)
    * [Tópicos](#pre-eequisitos)
-   * [Pré-Requisitos e instalação](##pre-eequisitos-e-instalacao)
+   * [Pré-Requisitos e instalação](#pre-eequisitos-e-instalacao)
       * [No android](#no-android)
-      * [Com o Android Studio](####com-o-android-studio)
-   * [Tecnologias utilizadas](##tecnologias-utilizadas)
-      * [BackEnd](####backend)
-      * [FrontEnd](####frontend) 
-   * [Autor](##autor)
+      * [Com o Android Studio](#com-o-android-studio)
+   * [Tecnologias utilizadas](#tecnologias-utilizadas)
+      * [BackEnd](#backend)
+      * [FrontEnd](#frontend) 
+   * [Autor](#autor)
    * [License](#license)
 <!--te-->
 
