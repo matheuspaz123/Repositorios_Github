@@ -23,7 +23,7 @@ Projeto do aplicativo concluido
    * [Descrição](#descricao)
    * [Status do projeto](#status-do-projeto)
    * [Tópicos](#pre-eequisitos)
-   * [Pré-Requisitos e instalação](#pre-eequisitos-e-instalacao)
+   * [Pré-Requisitos e instalação](#pre-requisitos-e-instalacao)
       * [No android](#no-android)
       * [Com o Android Studio](#com-o-android-studio)
    * [Tecnologias utilizadas](#tecnologias-utilizadas)
